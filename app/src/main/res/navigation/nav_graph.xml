@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bookListFragment">
+
+    <fragment
+        android:id="@+id/bookListFragment"
+        android:name="com.lista.desafio04.features.main.data.response.ui.BookFragment"
+        android:label="BookListFragment"
+        tools:layout="@layout/fragment_book">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/bookDetailsFragment"
+        android:name="com.lista.desafio04.features.main.data.response.ui.BookDetailsFragment"
+        android:label="BookDetailsFragment"
+        tools:layout="@layout/fragment_book_details">
+
+        <argument
+            android:name="itemBook"
+            app:argType="com.lista.desafio04.features.main.data.response.Book"
+            app:nullable="true" />
+
+    </fragment>
+
+</navigation>

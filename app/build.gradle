@@ -1,0 +1,97 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs'
+
+}
+
+android {
+    namespace 'com.lista.desafio04'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.lista.desafio04"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+
+        debug {
+            debuggable = true
+            minifyEnabled false
+            buildConfigField "String", "BASE_URL", "\"https://api.nytimes.com/\""
+            buildConfigField "String", "APIKEY", "\"01rO4tzrUxNU3IY0zuHkRyT2THtIdBPi\""
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    viewBinding {
+        enabled = true
+    }
+
+}
+
+dependencies {
+
+
+//    implementation 'androidx.core:core-ktx:1.7.0'
+//    implementation 'androidx.appcompat:appcompat:1.5.1'
+//    implementation 'com.google.android.material:material:1.7.0'
+//    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+//    testImplementation 'junit:junit:4.13.2'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    def dependencies = rootProject.ext.dependencies
+
+    implementation dependencies.kotlin
+    implementation dependencies.navigationComponent
+    implementation dependencies.navigationComponentKtx
+    implementation dependencies.coroutines
+    implementation dependencies.retrofit
+    implementation dependencies.converterGson
+    implementation dependencies.httpInterceptor
+    implementation dependencies.androidxCore
+    implementation dependencies.androidxCompat
+    implementation dependencies.googleMaterial
+    implementation dependencies.androidxConstraintLayout
+    implementation dependencies.picasso
+    implementation dependencies.insertKoin
+    implementation dependencies.roomRuntime
+    implementation dependencies.roomKtx
+
+    testImplementation dependencies.mockk
+    testImplementation dependencies.junit
+    testImplementation dependencies.jupiterApi
+    testImplementation dependencies.jupiterParams
+    testImplementation dependencies.jupiterEngine
+    testImplementation dependencies.jupiterVintageEngine
+    testImplementation dependencies.koinTest
+    testImplementation dependencies.koinTestJunit
+    testImplementation dependencies.androidxCoreTesting
+    testImplementation dependencies.assertjCore
+    testImplementation dependencies.robolectric
+    testImplementation dependencies.androidxTestCore
+    testImplementation dependencies.kotlinxCoroutinesTest
+
+}
