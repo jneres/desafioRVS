@@ -1,8 +1,8 @@
 package com.lista.desafioRVS.features.main.ui.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.lista.desafioRVS.databinding.ItemListBookBinding
 import com.lista.desafioRVS.features.main.data.response.Book
@@ -31,13 +31,10 @@ class BookListAdapter(var callback: (Book) -> Unit) :
 
     override fun getItemCount() = books.size
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateBooks(books: ArrayList<Book>) {
-        val diffCallback = BooksDiffsCallBack(this.books, books)
-        val diffResult = DiffUtil.calculateDiff(diffCallback)
-
-        this.books.clear()
-        this.books.addAll(books)
-        diffResult.dispatchUpdatesTo(this)
+        this.books = books
+        notifyDataSetChanged()
     }
 
     class BookViewHolder(
