@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Desafio 04</string>
+    <string name="app_name">desafioSVR</string>
     <string name="author">Autor:</string>
     <string name="price">Preco:</string>
     <string name="books">Livros</string>

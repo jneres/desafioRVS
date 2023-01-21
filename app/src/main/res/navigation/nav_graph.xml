@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/bookListFragment"
-        android:name="com.lista.desafio04.features.main.data.response.ui.BookFragment"
+        android:name="com.lista.desafioRVS.features.main.ui.BookFragment"
         android:label="BookListFragment"
         tools:layout="@layout/fragment_book">
 
@@ -15,13 +15,13 @@
 
     <fragment
         android:id="@+id/bookDetailsFragment"
-        android:name="com.lista.desafio04.features.main.data.response.ui.BookDetailsFragment"
+        android:name="com.lista.desafioRVS.features.main.ui.BookDetailsFragment"
         android:label="BookDetailsFragment"
         tools:layout="@layout/fragment_book_details">
 
         <argument
             android:name="itemBook"
-            app:argType="com.lista.desafio04.features.main.data.response.Book"
+            app:argType="com.lista.desafioRVS.features.main.data.response.Book"
             app:nullable="true" />
 
     </fragment>
